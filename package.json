@@ -1,0 +1,19 @@
+{
+  "name": "hopverkefni2",
+  "version": "1.0.0",
+  "description": "[Kynning í fyrirlestri](https://youtu.be/Alsi_j6skHY)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ernir270/Hopverkefni2.git"
+  },
+  "author": "Einar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ernir270/Hopverkefni2/issues"
+  },
+  "homepage": "https://github.com/ernir270/Hopverkefni2#readme"
+}
