@@ -4,7 +4,10 @@
   "description": "[Kynning í fyrirlestri](https://youtu.be/Alsi_j6skHY)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "browser-sync start --server --files main.js **/*.js styles.css index.html",
+    "lint": "eslint ./**/*.js",
+    "prettier": "prettier --write .",
+    "sass": "sass styles.scss styles.css"
   },
   "repository": {
     "type": "git",
@@ -15,5 +18,13 @@
   "bugs": {
     "url": "https://github.com/ernir270/Hopverkefni2/issues"
   },
-  "homepage": "https://github.com/ernir270/Hopverkefni2#readme"
+  "homepage": "https://github.com/ernir270/Hopverkefni2#readme",
+  "dependencies": {
+    "concurrently": "^6.4.0",
+    "eslint": "^8.2.0",
+    "prettier": "^2.4.1",
+    "sass": "^1.43.4",
+    "stylelint-config-sass-guidelines": "^9.0.1",
+    "stylelint-config-standard": "^24.0.0"
+  }
 }
