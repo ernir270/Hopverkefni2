@@ -1,0 +1,18 @@
+header{
+    text-align: center;
+    h1{
+        font-size: 4em;
+        font-family: $defaultFont;
+    }
+}
+
+.left-container{
+
+    ul{
+        list-style-type: none;
+    }
+
+    ul:not(.bottom-list){
+        margin-bottom: 2em;
+    }
+}

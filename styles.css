@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo&display=swap");
+* {
+  font-family: "Cairo", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  margin: 0 auto;
+  width: 80%;
+}
+
+header {
+  text-align: center;
+}
+header h1 {
+  font-size: 4em;
+  font-family: "Cairo", sans-serif;
+}
+
+.left-container ul {
+  list-style-type: none;
+}
+.left-container ul:not(.bottom-list) {
+  margin-bottom: 2em;
+}
+
+/*# sourceMappingURL=styles.css.map */
