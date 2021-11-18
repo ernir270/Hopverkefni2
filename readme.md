@@ -1,4 +1,5 @@
 # Upplýsingar
+Fyrst þarf að keyra `npm install`. <br/>
 `npm run dev` til að keyra verkefnið. <br/>
 `npm run lint` til að keyra lintera.
 ## Uppsetning
