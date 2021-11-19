@@ -44,15 +44,23 @@ main{
         font-size: .55em;
     }
 
+    .task{
+        border-bottom: 1px solid #D8D8D8;
+        padding-bottom: .5em;
+        margin-top: .5em;
+    }
+
     .grey{
         color: #808080;
     }
 
     input[type=radio]{
         margin-top: .9em;
-        margin-right: -1em;
+        margin-right: -4em;
         height:2em;
         width:2em;
+        position: relative;
+        right: 3em;
     }
 
     .flex-items{
