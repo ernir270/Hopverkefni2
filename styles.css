@@ -7,7 +7,7 @@
 
 main {
   margin: 0 auto;
-  width: 60%;
+  width: 80%;
 }
 
 header {
@@ -51,14 +51,21 @@ main {
   font-weight: 600;
   font-size: 0.55em;
 }
+.right-container .task {
+  border-bottom: 1px solid #D8D8D8;
+  padding-bottom: 0.5em;
+  margin-top: 0.5em;
+}
 .right-container .grey {
   color: #808080;
 }
 .right-container input[type=radio] {
   margin-top: 0.9em;
-  margin-right: -1em;
+  margin-right: -4em;
   height: 2em;
   width: 2em;
+  position: relative;
+  right: 3em;
 }
 .right-container .flex-items {
   display: flex;
