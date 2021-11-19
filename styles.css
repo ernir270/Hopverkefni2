@@ -7,7 +7,7 @@
 
 main {
   margin: 0 auto;
-  width: 80%;
+  width: 60%;
 }
 
 header {
@@ -18,11 +18,65 @@ header h1 {
   font-family: "Cairo", sans-serif;
 }
 
+main {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3%;
+}
+
+.left-container {
+  padding-top: 2em;
+}
 .left-container ul {
   list-style-type: none;
 }
 .left-container ul:not(.bottom-list) {
   margin-bottom: 2em;
+}
+.left-container li {
+  font-weight: 600;
+  font-size: 1.3em;
+}
+.left-container h2 {
+  font-size: 2em;
+}
+
+.right-container {
+  font-size: 1.7em;
+  /*
+
+      width: 2.5em;
+
+      text-align: center;*/
+}
+.right-container #sort-by {
+  height: 2.5em;
+  width: 8em;
+  margin: 0.5em 0 0 -1.2em;
+  font-weight: 600;
+  font-size: 0.55em;
+}
+.right-container .grey {
+  color: #808080;
+}
+.right-container input[type=radio] {
+  margin-top: 0.9em;
+  margin-right: -1em;
+  height: 2em;
+  width: 2em;
+}
+.right-container .flex-items {
+  display: flex;
+  gap: 1em;
+}
+.right-container .tag {
+  background-color: #D8D8D8;
+  border: 2px solid #B8B8B8;
+  border-radius: 8px;
+  padding: 0.1em 0.4em;
+  text-align: center;
+  font-size: 0.8em;
+  margin: 0.1em 0;
 }
 
 /*# sourceMappingURL=styles.css.map */

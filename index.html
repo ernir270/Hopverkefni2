@@ -13,24 +13,50 @@
         <h1>Verkefnalistinn</h1>
     </header>
     <main>
-    <div class="left-container">
+    <section class="left-container">
         <ul class="top-list">
             <li>Verkefni</li>
             <li>Kláruð verkefni</li>
         </ul>
         <ul>
-            <h3>Flokkar</h3>
+            <h2>Flokkar</h3>
             <li>Vefforrit</li>
             <li>Skipulag</li>
             <li>Vefþjónustur</li>
         </ul>
         <ul class="bottom-list">
-            <h3>Tags</h3>
+            <h2>Tags</h3>
             <li>Vefforrit</li>
             <li>Skipulag</li>
             <li>Vefþjónustur</li>
         </ul>
-    </div>
+    </section>
+
+    <section class="right-container">
+        <div class="flex-items">
+            <p>Raða eftir:</p>
+            <select name="sort" id="sort-by">
+                <option value="dagsetning">Dagsetningu</option>
+            </select>
+        </div>
+
+        <section class="task">
+            <div class="flex-items">
+                <input type="radio" name="title" value=""> 
+                <p>Titill á task</p>
+            </div>
+            <p class="grey">Lýsing á verkefni, ef einhver</p>
+            <div class="flex-items">
+                <p class="grey">10 nóv</p>
+                <div class="tag">Tag</div>
+                <div class="tag">Tag</div>
+                <div class="tag">Tag</div>
+                <p class="category-text">Flokkur</p>
+            </div>        
+        </section>
+
+    </section>
+
 
 
     </main>
