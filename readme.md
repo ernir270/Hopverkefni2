@@ -3,7 +3,6 @@ Fyrst þarf að keyra `npm install`. <br/>
 `npm run dev` til að keyra verkefnið. <br/>
 `npm run lint` til að keyra lintera.
 ## Uppsetning
-*Lýsingu á uppsetningu verkefnis, hvernig því er skipt í möppur, hvernig CSS/Sass er skipulagt og fleira sem á við* <br/><br/>
 
 ### Sass og CSS
 Sass skrár verða í `/styles` möppunni. <br/>
