@@ -4,9 +4,6 @@ Fyrst þarf að keyra `npm install`. <br/>
 `npm run lint` til að keyra lintera.
 ## Uppsetning
 
-[]: # ### HTML
-[]: # Allar html skrár nema index.html verða í `/pages` möppunni.
-
 ### Sass og CSS
 Sass skrár verða í `/styles` möppunni. <br/>
 styles.scss importar frá öllum öðrum .scss skrám. <br/>
