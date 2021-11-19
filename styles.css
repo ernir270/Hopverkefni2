@@ -43,11 +43,6 @@ main {
 
 .right-container {
   font-size: 1.7em;
-  /*
-
-      width: 2.5em;
-
-      text-align: center;*/
 }
 .right-container #sort-by {
   height: 2.5em;
