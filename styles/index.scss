@@ -1,3 +1,15 @@
+*{
+    font-family: $defaultFont;
+    margin: 0;
+    padding: 0;
+}
+
+main{
+    margin: 0 auto;
+    width: 80%;
+    max-width: 1000px;
+}
+
 header{
     text-align: center;
     h1{
@@ -37,8 +49,6 @@ main{
 
 .right-container{
     font-size: 1.7em;
-    display: flex;
-    flex-flow: column;
 
     #sort-by{
         height: 2.5em;
