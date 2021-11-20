@@ -47,5 +47,13 @@ async function taskSelect(taskType, findIn){
 document.querySelector('.vefforrit-flokkar')
     .addEventListener('click', () => taskSelect('vefforrit','category'));
 
+// ef klikkað er á '.skipulag-flokkar'
+document.querySelector('.skipulag-flokkar')
+    .addEventListener('click', () => taskSelect('skipulag','category'));
+
+// ef klikkað er á '.vefthjonustur-flokkar'
+document.querySelector('.vefthjonustur-flokkar')
+    .addEventListener('click', () => taskSelect('vefþjónustur','category'));
+
 
 main();
