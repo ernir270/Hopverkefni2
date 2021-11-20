@@ -8,12 +8,13 @@ header{
 
 main{
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 2.2fr;
     gap: 3%;
 }
 
 .left-container{
     padding-top: 2em;
+
 
     ul{
         list-style-type: none;
@@ -26,6 +27,7 @@ main{
     li{
         font-weight: 600;
         font-size: 1.3em;
+        cursor: pointer;
     }
 
     h2{
@@ -35,6 +37,8 @@ main{
 
 .right-container{
     font-size: 1.7em;
+    display: flex;
+    flex-flow: column;
 
     #sort-by{
         height: 2.5em;

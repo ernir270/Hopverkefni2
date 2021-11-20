@@ -9,6 +9,23 @@ async function getData(){
     return resjson;
 }
 
+/**
+ * raðar (data) eftir (sortBy)
+ * 
+ * @param {dagsetning} sortBy strengur sem segir til um hvernig gögnin verða röðuð
+ * @param {*} data Gögn
+ */
+function sortTasks(sortBy, data){
+
+    if(sortBy === 'dagsetning'){ // raða eftir dagsetningu
+        data.sort(function(x, y){
+            if(x.due !== null){
+                return x.due - y.due;
+            }
+        })
+    }
+}
+
 
 /**
  * Birtir öll task sem eru í inntakinu (data).
@@ -18,6 +35,10 @@ async function getData(){
 function showTasks(data){
     // finna .right-container elementið
     const container = document.querySelector('.right-container');
+
+    const dropdownValue = document.querySelector('#sort-by').value;
+    
+    sortTasks(dropdownValue, data); // raða listanum
 
     for(let i = 0; i < data.length; i++){
         let section = document.createElement('section');  // búa til <section>
@@ -49,10 +70,19 @@ function showTasks(data){
         let flexItem2 = document.createElement('div');
         flexItem2.classList.add('flex-items');
     
-        let date = document.createElement('p');
-        date.classList.add('grey');
-        date.innerText = '10 nóv';
-        flexItem2.appendChild(date);
+        // dagsetning
+        if(data[i].due !== null){ // ef dagsetning er ekki null
+            let time = new Date(data[i].due);
+
+            // replacea til að fá íslenskt útlit af dagsetningunni
+            let timeStr = String(time).replace("o","ó").replace("Dec","Des").replace(" 0"," ").replace("Oct","okt").replace("May","Maí").replace("Ju","jú").replace("Aug","Ágúst").toLowerCase();
+
+            let timeArr = timeStr.split(" ");
+            let date = document.createElement('p');
+            date.classList.add('grey');
+            date.innerText = timeArr[2] + " " + timeArr[1];
+            flexItem2.appendChild(date);
+        }
     
         // búa til tags
         for(let j = 0; j < data[i].tags.length; j++){
