@@ -8,6 +8,7 @@
 main {
   margin: 0 auto;
   width: 80%;
+  max-width: 1000px;
 }
 
 header {
@@ -20,7 +21,7 @@ header h1 {
 
 main {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 2.2fr;
   gap: 3%;
 }
 
@@ -36,6 +37,7 @@ main {
 .left-container li {
   font-weight: 600;
   font-size: 1.3em;
+  cursor: pointer;
 }
 .left-container h2 {
   font-size: 2em;
@@ -43,6 +45,8 @@ main {
 
 .right-container {
   font-size: 1.7em;
+  display: flex;
+  flex-flow: column;
 }
 .right-container #sort-by {
   height: 2.5em;
