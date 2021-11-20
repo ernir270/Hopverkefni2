@@ -8,7 +8,6 @@ Fyrst þarf að keyra `npm install`. <br/>
 Sass skrár verða í `/styles` möppunni. <br/>
 styles.scss importar frá öllum öðrum .scss skrám. <br/>
 styles.scss verður þýtt yfir í styles.css. <br/>
-common.scss inniheldur stílana sem allar síðurnar hafa sameiginlegt. <br/>
 config.scss inniheldur breytur, föll, o.sv.frv.
 
 ### JavaScript

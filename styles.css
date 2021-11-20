@@ -45,8 +45,6 @@ main {
 
 .right-container {
   font-size: 1.7em;
-  display: flex;
-  flex-flow: column;
 }
 .right-container #sort-by {
   height: 2.5em;
