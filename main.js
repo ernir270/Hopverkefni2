@@ -20,30 +20,56 @@ const dataItems = data.items;
  */
 function getTags(){
 
-    const tagArr = []; // tómt array sem við munum bæta tags í
+    const tagArr = []; // tómt array sem við munum bæta tags og tag teljara í. (verður tvívítt fylki)
+    let containsIt;
 
     // bætir öllum tags sem eru til í tagArr
     for(let i = 0; i < dataItems.length; i++){
         for(let j = 0; j < dataItems[i].tags.length; j++){
+            containsIt = false; // reset í false
+            
+            // finnur hvort tag er núþegar í listanum 
+            for(let g = 0; g < tagArr.length; g++){
+                // ef tagArr[g] er með dataItems[i].tags[j] í listanum 
+                if(tagArr[g].includes(dataItems[i].tags[j])){
+                    containsIt = true;
+                    tagArr[g][1]++; // bætir 1 við teljarann sem telur hversu mörg task eru með þetta tag
+                    break;
+                }
+            }
+
             // ef tag er ekki í listanum
-            if(!tagArr.includes(dataItems[i].tags[j])){
-                tagArr.push(dataItems[i].tags[j]);
+            if(!containsIt){
+                tagArr.push([dataItems[i].tags[j],1]); // bæta tag-i við í listann
             }
         }
     }
 
-    // býr til element og birtir tag-in
+    
     const tagCont = document.querySelector('.tag-container');
-    for(let i = 0; i < tagArr.length; i++){
-        let li = document.createElement('li');
-        li.innerText = tagArr[i];
-        li.classList.add(`${tagArr[i]}-tag`);
+    for(let i = 0; i < tagArr.length; i++){ // búum til element og birtum tag-in
 
-        tagCont.appendChild(li);
+        let liCont = document.createElement('div'); // búa til div
+        liCont.classList.add('li-container') // bæta við class="li-container"
+
+        // búum til <li>
+        let li = document.createElement('li');
+        li.innerText = tagArr[i][0]; // textinn
+        li.classList.add(`${tagArr[i][0]}-tag`);
+        liCont.appendChild(li); // höfum li sem 'barn' af liCont
+
+        // búum til p 
+        let num = document.createElement('p');
+        num.innerText = tagArr[i][1];
+        num.classList.add('grey');
+        num.classList.add('right-num');
+        liCont.appendChild(num);
+
+        tagCont.appendChild(liCont);
 
         // ef klikkað er á '.${tagArr[i]}-tag'
-        document.querySelector(`.${tagArr[i]}-tag`)
-            .addEventListener('click', () => taskSelect(`${tagArr[i]}`,'tag'));
+        document.querySelector(`.${tagArr[i][0]}-tag`)
+            .addEventListener('click', () => taskSelect(`${tagArr[i][0]}`,'tag'));
     }
 
 }
