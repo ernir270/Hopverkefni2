@@ -45,6 +45,21 @@ main{
     h2{
         font-size: 2em;
     }
+
+    .li-container{
+        display: flex;
+        width: 85%;
+    }
+
+    .right-num{
+        font-weight: 600;
+        font-size: 1.4em;
+        margin-left: auto;
+    }
+}
+
+.grey{
+    color: #808080;
 }
 
 .right-container{
@@ -64,9 +79,6 @@ main{
         margin-top: .5em;
     }
 
-    .grey{
-        color: #808080;
-    }
 
     input[type=radio]{
         margin-top: .9em;

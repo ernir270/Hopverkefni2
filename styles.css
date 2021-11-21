@@ -42,6 +42,19 @@ main {
 .left-container h2 {
   font-size: 2em;
 }
+.left-container .li-container {
+  display: flex;
+  width: 85%;
+}
+.left-container .right-num {
+  font-weight: 600;
+  font-size: 1.4em;
+  margin-left: auto;
+}
+
+.grey {
+  color: #808080;
+}
 
 .right-container {
   font-size: 1.7em;
@@ -57,9 +70,6 @@ main {
   border-bottom: 1px solid #D8D8D8;
   padding-bottom: 0.5em;
   margin-top: 0.5em;
-}
-.right-container .grey {
-  color: #808080;
 }
 .right-container input[type=radio] {
   margin-top: 0.9em;
