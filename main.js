@@ -80,20 +80,87 @@ function getTags(){
 function getCategories(){
 
     const category = data.categories;
+    const categoryArray = []; // tvívítt fylki [flokkur][hversu mörg task eru með flokkinn]
+
+    let categoryCount;
+    // bætum við öllum flokkum í categoryArray og líka hversu mörg task eru af þeim flokki
+    for(let i = 0; i < category.length; i++){
+        categoryCount = 0;
+
+        // teljum hversu mörg task eru í flokki category[i].title.toLowerCase()
+        for(let j = 0; j < dataItems.length; j++){
+            if(category[i].title.toLowerCase() === dataItems[j].category){
+                if(!dataItems[j].deleted && !dataItems[j].completed){
+                    categoryCount++;
+                }
+            }
+        }
+
+        categoryArray.push([category[i].title.toLowerCase(), categoryCount]);
+    }
 
     const categoryContainer = document.querySelector('.category-container');
-    for(let i = 0; i < category.length; i++){
+    for(let i = 0; i < categoryArray.length; i++){
+
+        let liCont = document.createElement('div'); // búa til div
+        liCont.classList.add('li-container') // bæta við class="li-container"
+
         let li = document.createElement('li');
-        let categoryTitle = category[i].title.toLowerCase();
+        let categoryTitle = categoryArray[i][0];
         li.innerText = categoryTitle;
         li.classList.add(`${categoryTitle}-flokkar`);
+        liCont.appendChild(li); // höfum li sem 'barn' af liCont
 
-        categoryContainer.appendChild(li);
+        // búum til p 
+        let num = document.createElement('p');
+        num.innerText = categoryArray[i][1];
+        num.classList.add('grey');
+        num.classList.add('right-num');
+        liCont.appendChild(num);
+
+        categoryContainer.appendChild(liCont);
 
         // ef klikkað er á '.${categoryTitle}-flokkar'
         document.querySelector(`.${categoryTitle}-flokkar`)
             .addEventListener('click', () => taskSelect(`${categoryTitle}`,'category'));
     }
+}
+/**
+ * Birtir hversu mörg Verkefni og Kláruð verkefni eru til (sem eru ekki deleted).
+ */
+function showTaskCount(){
+
+    let taskCount = 0;
+    let finishedTaskCount = 0;
+
+    for(let i = 0; i < dataItems.length; i++){
+        // ef task er ekki deletað né klárað
+        if(!dataItems[i].deleted && !dataItems[i].completed){
+            taskCount++;
+        }
+        // ef task er klárað og task er ekki deletað
+        if(dataItems[i].completed && !dataItems[i].deleted){
+            finishedTaskCount++;
+        }
+    }
+
+    const parent = document.querySelector('.taskbuttons-container');
+    const liCont = parent.querySelectorAll('.li-container');
+
+
+    // búum til p fyrir Verkefni
+    let num = document.createElement('p');
+    num.innerText = taskCount;
+    num.classList.add('grey');
+    num.classList.add('right-num');
+    liCont[0].appendChild(num);
+
+    // búum til p fyrir Kláruð verkefni
+    num = document.createElement('p');
+    num.innerText = finishedTaskCount;
+    num.classList.add('grey');
+    num.classList.add('right-num');
+    liCont[1].appendChild(num);    
 }
 
 /**
@@ -103,6 +170,7 @@ async function main(){
 
     getCategories();
     getTags();
+    showTaskCount();
 
     // kallar í taskSelect sem mun svo kalla í annað fall sem birtir öll task (nema completed eða deleted task).
     taskSelect('',''); 
@@ -124,8 +192,6 @@ async function taskSelect(taskType, findIn){
         for(let i = 0; i < dataItems.length; i++){
             // ef task er ekki klárað og task er ekki deletað
             if(!dataItems[i].completed && !dataItems[i].deleted){
-                console.log(dataItems[i].category);
-                console.log("tasktype: " + taskType);
                 if(dataItems[i].category === taskType){
 
                     taskArr.push(dataItems[i]);
