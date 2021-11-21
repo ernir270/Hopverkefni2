@@ -11,14 +11,18 @@ async function getData(){
     return resjson;
 }
 
+// kallar á getData() til að sækja gögn
 const data = await getData();
 const dataItems = data.items;
 
-
+/**
+ * Birtir öll tög-in sem eru til.
+ */
 function getTags(){
 
-    const tagArr = [];
+    const tagArr = []; // tómt array sem við munum bæta tags í
 
+    // bætir öllum tags sem eru til í tagArr
     for(let i = 0; i < dataItems.length; i++){
         for(let j = 0; j < dataItems[i].tags.length; j++){
             // ef tag er ekki í listanum
@@ -28,24 +32,51 @@ function getTags(){
         }
     }
 
+    // býr til element og birtir tag-in
     const tagCont = document.querySelector('.tag-container');
     for(let i = 0; i < tagArr.length; i++){
         let li = document.createElement('li');
         li.innerText = tagArr[i];
+        li.classList.add(`${tagArr[i]}-tag`);
 
         tagCont.appendChild(li);
+
+        // ef klikkað er á '.${tagArr[i]}-tag'
+        document.querySelector(`.${tagArr[i]}-tag`)
+            .addEventListener('click', () => taskSelect(`${tagArr[i]}`,'tag'));
     }
 
 }
 
+/**
+ *  Birtir alla flokka sem eru til.
+ */
+function getCategories(){
+
+    const category = data.categories;
+
+    const categoryContainer = document.querySelector('.category-container');
+    for(let i = 0; i < category.length; i++){
+        let li = document.createElement('li');
+        let categoryTitle = category[i].title.toLowerCase();
+        li.innerText = categoryTitle;
+        li.classList.add(`${categoryTitle}-flokkar`);
+
+        categoryContainer.appendChild(li);
+
+        // ef klikkað er á '.${categoryTitle}-flokkar'
+        document.querySelector(`.${categoryTitle}-flokkar`)
+            .addEventListener('click', () => taskSelect(`${categoryTitle}`,'category'));
+    }
+}
 
 /**
  * Main fallið.
  */
 async function main(){
 
+    getCategories();
     getTags();
-
 
     // kallar í taskSelect sem mun svo kalla í annað fall sem birtir öll task (nema completed eða deleted task).
     taskSelect('',''); 
@@ -67,6 +98,8 @@ async function taskSelect(taskType, findIn){
         for(let i = 0; i < dataItems.length; i++){
             // ef task er ekki klárað og task er ekki deletað
             if(!dataItems[i].completed && !dataItems[i].deleted){
+                console.log(dataItems[i].category);
+                console.log("tasktype: " + taskType);
                 if(dataItems[i].category === taskType){
 
                     taskArr.push(dataItems[i]);
@@ -75,7 +108,15 @@ async function taskSelect(taskType, findIn){
         }
     }
     else if(findIn === 'tag'){
+        for(let i = 0; i < dataItems.length; i++){
+            // ef task er ekki klárað og task er ekki deletað
+            if(!dataItems[i].completed && !dataItems[i].deleted){
+                if(dataItems[i].tags.includes(taskType)){
 
+                    taskArr.push(dataItems[i]);
+                }
+            }
+        }
     }
     else if(findIn === 'finished'){
         for(let i = 0; i < dataItems.length; i++){
@@ -95,20 +136,9 @@ async function taskSelect(taskType, findIn){
             }
         }
     }
+
     showTasks(taskArr);
 }
-
-// ef klikkað er á '.vefforrit-flokkar'
-document.querySelector('.vefforrit-flokkar')
-    .addEventListener('click', () => taskSelect('vefforrit','category'));
-
-// ef klikkað er á '.skipulag-flokkar'
-document.querySelector('.skipulag-flokkar')
-    .addEventListener('click', () => taskSelect('skipulag','category'));
-
-// ef klikkað er á '.vefthjonustur-flokkar'
-document.querySelector('.vefthjonustur-flokkar')
-    .addEventListener('click', () => taskSelect('vefþjónustur','category'));
 
 // ef klikkað er á '.verkefni'
 document.querySelector('.verkefni')
