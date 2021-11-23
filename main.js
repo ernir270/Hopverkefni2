@@ -1,20 +1,7 @@
+import { dataItems } from './lib/data.js';
 import { showTasks } from './lib/tasks.js';
 import { showTaskCount, getCategories, getTags } from './lib/gets.js';
 
-/**
- * Sækir gögn frá data.json
- * 
- * @returns skilar gögnum frá data.json
- */
-async function getData(){
-    const res = await fetch('data.json');
-    const resjson = res.json();
-    return resjson;
-}
-
-// kallar á getData() til að sækja gögn
-export const data = await getData();
-export const dataItems = data.items;
 
 // breyta sem heldur um hvaða tasks við erum að birta
 export let currentTasks = ['',''];
