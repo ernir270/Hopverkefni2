@@ -79,6 +79,11 @@ main{
         margin-top: .5em;
     }
 
+    .task:hover{
+        background-color: #F8F8F8;
+        border-radius: 15px;
+        cursor: pointer;
+    }
 
     input[type=radio]{
         margin-top: .9em;

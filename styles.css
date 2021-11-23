@@ -71,6 +71,11 @@ main {
   padding-bottom: 0.5em;
   margin-top: 0.5em;
 }
+.right-container .task:hover {
+  background-color: #F8F8F8;
+  border-radius: 15px;
+  cursor: pointer;
+}
 .right-container input[type=radio] {
   margin-top: 0.9em;
   margin-right: -4em;
