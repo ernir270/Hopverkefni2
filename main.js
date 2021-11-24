@@ -3,6 +3,7 @@ import { showTasks } from './lib/tasks.js';
 import { showTaskCount, getCategories, getTags } from './lib/gets.js';
 
 
+
 // breyta sem heldur um hvaða tasks við erum að birta
 export let currentTasks = ['',''];
 

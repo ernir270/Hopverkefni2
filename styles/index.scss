@@ -8,6 +8,9 @@ main{
     margin: 0 auto;
     width: 80%;
     max-width: 1000px;
+    display: grid;
+    grid-template-columns: 1fr 2.2fr;
+    gap: 3%;
 }
 
 header{
@@ -16,12 +19,6 @@ header{
         font-size: 4em;
         font-family: $defaultFont;
     }
-}
-
-main{
-    display: grid;
-    grid-template-columns: 1fr 2.2fr;
-    gap: 3%;
 }
 
 .left-container{
@@ -96,11 +93,13 @@ main{
         width:2em;
         position: relative;
         right: 3em;
+        cursor: pointer;
     }
 
     .flex-items{
         display: flex;
         gap: 1em;
+        flex-wrap: wrap;
     }
 
     .tag{
@@ -190,5 +189,38 @@ main{
 
     .delete-task{
         margin-left: auto;
+    }
+
+    .add-task{
+        margin-bottom: 5em;
+        margin-top: .3em;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 930px){
+    main{
+        width: 100%;
+    }
+}
+
+@media (max-width: 720px){
+    main{
+        grid-template-columns: 1fr;
+        width:80%;
+    }
+
+    .right-container{
+        font-size: 4vw;
+    }
+    .left-container{
+        margin: 0 auto;
+        width:70%;
+    }
+}
+
+@media (max-width: 500px){
+    .right-container{
+        font-size: 4.3vw;
     }
 }
