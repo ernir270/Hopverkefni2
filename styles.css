@@ -170,6 +170,12 @@ header h1 {
   margin-top: 0.3em;
   cursor: pointer;
 }
+.right-container .require-title:placeholder-shown {
+  border-color: #FF0000;
+}
+.right-container .require-title::placeholder {
+  color: #FF0000;
+}
 
 @media (max-width: 930px) {
   main {

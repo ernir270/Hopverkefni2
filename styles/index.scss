@@ -196,6 +196,13 @@ header{
         margin-top: .3em;
         cursor: pointer;
     }
+
+    .require-title:placeholder-shown{
+        border-color: #FF0000;
+    }
+    .require-title::placeholder{
+        color: #FF0000;
+    }
 }
 
 @media (max-width: 930px){
