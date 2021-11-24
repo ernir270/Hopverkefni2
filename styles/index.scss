@@ -108,4 +108,83 @@ main{
         font-size: .8em;
         margin: .1em 0;
     }
+
+    .edit-task{
+        border:none;
+        background-color: #F8F8F8;
+        font-size: .8em;
+        padding:.5em;
+        padding-top: 25px;
+        margin-top: -1.7em;
+    }
+    legend{
+        font-size: 1.3em;
+        padding-top: 1.8em;
+        margin-bottom: -1em;
+    }
+
+    
+
+    .edit-title{
+        width:30em;
+    }
+
+    .edit-description{
+        width:98%;
+        padding: 0 .3em;
+        font-size:.8em;
+    }
+
+    .choose-category{
+        margin-left: .5em;
+        font-size: .8em;
+        width:8em;
+    }
+
+    .edit-tags{
+        width:20em;
+    }
+
+    input[type=text]{
+        font-size:.8em;
+    }
+
+    input[type=checkbox]{
+        height:1.5em;
+        width:1.5em;
+        margin-top: .9em;
+        position: relative;
+        right: 1em;
+    }
+
+    input[type=date]{
+        margin-left: .5em;
+        font-size: .7em
+    }
+
+    .button-flex{
+        display: flex;
+        gap:2em;
+    }
+
+    button, input[type=submit]{
+        background-color: #D8D8D8;
+        border: 1px solid #B8B8B8;
+        border-radius: 3px;
+        padding: .1em .4em;
+        text-align: center;
+        font-size: .9em;
+        margin: .1em 0;
+        margin-top: .7em;
+    }
+
+    button:hover, input[type=submit]:hover{
+        cursor: pointer;
+        background-color: #B8B8B8;
+        border-color: D8D8D8;
+    }
+
+    .delete-task{
+        margin-left: auto;
+    }
 }
