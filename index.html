@@ -26,7 +26,7 @@
         </ul>
         <ul class="category-container">
             <h2>Flokkar</h3>
-
+            <p class="fetching-text">Sækir flokka...</p> 
             <!-- Þetta er hvernig hver flokkur lítur út eftir að
                  getCategories() birtir hann.
 
@@ -38,7 +38,7 @@
         </ul>
         <ul class="tag-container">
             <h2>Tags</h3>
-
+                <p class="fetching-text">Sækir tags...</p> 
             <!-- Þetta er hvernig tag-in munu líta út eftir að 
                  getTags() birtir þau.
 
@@ -87,6 +87,9 @@
                 <option value="forgangi">Forgangi</option>
             </select>
         </div>
+        <!-- data.js mun svo fjarlægja þennan texta þegar það er búið að sækja gögn -->
+        <p class="fetching-text">Sækir gögn...</p> 
+
         <!--            Þetta er hvernig showEditTask() í editTask.js mun birta þetta
 
         <fieldset class="edit-task">
@@ -115,7 +118,7 @@
 
         <section class="task">
             <div class="flex-items">
-                <input type="radio" name="title" value=""> 
+                <input type="radio" name="title" value="" class"radio-btn> 
                 <p>Titill á task</p>
             </div>
             <p class="grey">Lýsing á verkefni, ef einhver</p>

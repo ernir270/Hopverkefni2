@@ -205,20 +205,20 @@ header{
     }
 }
 
-@media (max-width: 930px){
+@media (max-width: 955px){
     main{
-        width: 100%;
+        width: 98%;
     }
 }
 
-@media (max-width: 720px){
+@media (max-width: 780px){
     main{
-        grid-template-columns: 1fr;
-        width:80%;
+        grid-template-columns: 1fr 1.5fr;
+        gap:0;
     }
 
     .right-container{
-        font-size: 4vw;
+        font-size: 1.4em;
     }
     .left-container{
         margin: 0 auto;
@@ -226,8 +226,66 @@ header{
     }
 }
 
-@media (max-width: 500px){
+@media (max-width: 705px){
     .right-container{
-        font-size: 4.3vw;
+        font-size: 1.2em;
+
+        input[type=radio]{
+            margin-top: .6em;
+            margin-right: -3.4em;
+            height:1.6em;
+            width:2em;
+            position: relative;
+            right: 2.5em;
+            cursor: pointer;
+        }
+    }
+}
+
+@media (max-width: 611px){
+    .right-container{
+        font-size: 1.05em;
+    }
+
+}
+
+
+@media (max-width: 540px){
+    main{
+        grid-template-columns: 1fr;
+    }
+
+    .right-container{
+        font-size: 1.4em;
+        width:92%;
+        margin-left: auto;
+    }
+ 
+}
+
+@media (max-width: 540px){
+
+    .right-container{
+        font-size: 1.2em;
+
+        .edit-title{
+            width:89%;
+        }
+
+        .edit-task{
+            min-width: 90%;
+        }
+
+        input[type=checkbox]{
+            height:1.5em;
+            width:1.5em;
+            margin-top: .5em;
+            position: relative;
+            right: 1em;
+        }
+
+        .choose-category{
+            margin-left: .4em;
+        }
     }
 }
