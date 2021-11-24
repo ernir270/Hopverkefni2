@@ -46,6 +46,10 @@ main {
   display: flex;
   width: 85%;
 }
+.left-container li:hover {
+  background-color: #F8F8F8;
+  border-radius: 8px;
+}
 .left-container .right-num {
   font-weight: 600;
   font-size: 1.4em;

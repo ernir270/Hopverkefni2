@@ -50,6 +50,10 @@ main{
         display: flex;
         width: 85%;
     }
+    li:hover{
+        background-color: #F8F8F8;
+        border-radius: 8px;
+    }
 
     .right-num{
         font-weight: 600;
