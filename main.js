@@ -90,7 +90,7 @@ document.querySelector('.klarud-verkefni')
 
 let dropdown = document.querySelector('#sort-by');
 // þegar það er breytt dropdown value
-// kalla í showTasks() sem mun svo kalla í fallið sem sortar listann.
+// kalla í taskSelect() sem mun svo kalla showTasks() sem mun svo kalla í fallið sem sortar listann.
 dropdown.addEventListener('change', () => taskSelect(currentTasks[0], currentTasks[1]));
 
 
