@@ -77,7 +77,7 @@ header h1 {
   border-radius: 15px;
   cursor: pointer;
 }
-.right-container input[type="radio"] {
+.right-container input[type=radio] {
   margin-top: 0.9em;
   margin-right: -4em;
   height: 2em;
@@ -129,17 +129,17 @@ header h1 {
 .right-container .edit-tags {
   width: 20em;
 }
-.right-container input[type="text"] {
+.right-container input[type=text] {
   font-size: 0.8em;
 }
-.right-container input[type="checkbox"] {
+.right-container input[type=checkbox] {
   height: 1.5em;
   width: 1.5em;
   margin-top: 0.9em;
   position: relative;
   right: 1em;
 }
-.right-container input[type="date"] {
+.right-container input[type=date] {
   margin-left: 0.5em;
   font-size: 0.7em;
 }
@@ -148,7 +148,7 @@ header h1 {
   gap: 2em;
 }
 .right-container button,
-.right-container input[type="submit"] {
+.right-container input[type=submit] {
   background-color: #d8d8d8;
   border: 1px solid #b8b8b8;
   border-radius: 3px;
@@ -159,7 +159,7 @@ header h1 {
   margin-top: 0.7em;
 }
 .right-container button:hover,
-.right-container input[type="submit"]:hover {
+.right-container input[type=submit]:hover {
   cursor: pointer;
   background-color: #b8b8b8;
   border-color: D8D8D8;
@@ -203,7 +203,7 @@ header h1 {
   .right-container {
     font-size: 1.2em;
   }
-  .right-container input[type="radio"] {
+  .right-container input[type=radio] {
     margin-top: 0.6em;
     margin-right: -3.4em;
     height: 1.6em;
@@ -236,7 +236,7 @@ header h1 {
   .right-container .edit-task {
     min-width: 90%;
   }
-  .right-container input[type="checkbox"] {
+  .right-container input[type=checkbox] {
     margin-top: 0.5em;
   }
   .right-container .choose-category {
