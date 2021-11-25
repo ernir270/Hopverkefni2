@@ -7,18 +7,6 @@ import { showTaskCount, getCategories, getTags } from './lib/gets.js';
 // breyta sem heldur um hvaða tasks við erum að birta
 export let currentTasks = ['',''];
 
-/**
- * Main fallið.
- */
-async function main(){
-
-    getCategories();
-    getTags();
-    showTaskCount();
-
-    // kallar í taskSelect sem mun svo kalla í annað fall sem birtir öll task (nema completed eða deleted task).
-    taskSelect('',''); 
-}
 
 /**
  * Finnur öll task sem hafa (taskType) í (findIn).
@@ -79,6 +67,20 @@ export async function taskSelect(taskType, findIn){
     showTasks(taskArr);
 }
 
+/**
+ * Main fallið.
+ */
+ async function main(){
+
+    getCategories();
+    getTags();
+    showTaskCount();
+
+    // kallar í taskSelect sem mun svo kalla í annað fall sem birtir öll task (nema completed eða deleted task).
+    taskSelect('',''); 
+}
+
+
 // ef klikkað er á '.verkefni'
 document.querySelector('.verkefni')
     .addEventListener('click', () => taskSelect('',''));
@@ -88,7 +90,7 @@ document.querySelector('.klarud-verkefni')
     .addEventListener('click', () => taskSelect('','finished'));
 
 
-let dropdown = document.querySelector('#sort-by');
+const dropdown = document.querySelector('#sort-by');
 // þegar það er breytt dropdown value
 // kalla í taskSelect() sem mun svo kalla showTasks() sem mun svo kalla í fallið sem sortar listann.
 dropdown.addEventListener('change', () => taskSelect(currentTasks[0], currentTasks[1]));

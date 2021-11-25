@@ -44,7 +44,7 @@ header h1 {
   width: 85%;
 }
 .left-container li:hover {
-  background-color: #F8F8F8;
+  background-color: #f8f8f8;
   border-radius: 8px;
 }
 .left-container .right-num {
@@ -68,16 +68,16 @@ header h1 {
   font-size: 0.55em;
 }
 .right-container .task {
-  border-bottom: 1px solid #D8D8D8;
+  border-bottom: 1px solid #d8d8d8;
   padding-bottom: 0.5em;
   margin-top: 0.5em;
 }
 .right-container .task:hover {
-  background-color: #F8F8F8;
+  background-color: #f8f8f8;
   border-radius: 15px;
   cursor: pointer;
 }
-.right-container input[type=radio] {
+.right-container input[type="radio"] {
   margin-top: 0.9em;
   margin-right: -4em;
   height: 2em;
@@ -92,8 +92,8 @@ header h1 {
   flex-wrap: wrap;
 }
 .right-container .tag {
-  background-color: #D8D8D8;
-  border: 2px solid #B8B8B8;
+  background-color: #d8d8d8;
+  border: 2px solid #b8b8b8;
   border-radius: 8px;
   padding: 0.1em 0.4em;
   text-align: center;
@@ -102,7 +102,7 @@ header h1 {
 }
 .right-container .edit-task {
   border: none;
-  background-color: #F8F8F8;
+  background-color: #f8f8f8;
   font-size: 0.8em;
   padding: 0.5em;
   padding-top: 25px;
@@ -129,17 +129,17 @@ header h1 {
 .right-container .edit-tags {
   width: 20em;
 }
-.right-container input[type=text] {
+.right-container input[type="text"] {
   font-size: 0.8em;
 }
-.right-container input[type=checkbox] {
+.right-container input[type="checkbox"] {
   height: 1.5em;
   width: 1.5em;
   margin-top: 0.9em;
   position: relative;
   right: 1em;
 }
-.right-container input[type=date] {
+.right-container input[type="date"] {
   margin-left: 0.5em;
   font-size: 0.7em;
 }
@@ -147,9 +147,10 @@ header h1 {
   display: flex;
   gap: 2em;
 }
-.right-container button, .right-container input[type=submit] {
-  background-color: #D8D8D8;
-  border: 1px solid #B8B8B8;
+.right-container button,
+.right-container input[type="submit"] {
+  background-color: #d8d8d8;
+  border: 1px solid #b8b8b8;
   border-radius: 3px;
   padding: 0.1em 0.4em;
   text-align: center;
@@ -157,9 +158,10 @@ header h1 {
   margin: 0.1em 0;
   margin-top: 0.7em;
 }
-.right-container button:hover, .right-container input[type=submit]:hover {
+.right-container button:hover,
+.right-container input[type="submit"]:hover {
   cursor: pointer;
-  background-color: #B8B8B8;
+  background-color: #b8b8b8;
   border-color: D8D8D8;
 }
 .right-container .delete-task {
@@ -171,10 +173,10 @@ header h1 {
   cursor: pointer;
 }
 .right-container .require-title:placeholder-shown {
-  border-color: #FF0000;
+  border-color: #ff0000;
 }
 .right-container .require-title::placeholder {
-  color: #FF0000;
+  color: #ff0000;
 }
 
 @media (max-width: 955px) {
@@ -201,7 +203,7 @@ header h1 {
   .right-container {
     font-size: 1.2em;
   }
-  .right-container input[type=radio] {
+  .right-container input[type="radio"] {
     margin-top: 0.6em;
     margin-right: -3.4em;
     height: 1.6em;
@@ -234,7 +236,7 @@ header h1 {
   .right-container .edit-task {
     min-width: 90%;
   }
-  .right-container input[type=checkbox] {
+  .right-container input[type="checkbox"] {
     margin-top: 0.5em;
   }
   .right-container .choose-category {
