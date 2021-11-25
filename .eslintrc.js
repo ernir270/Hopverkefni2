@@ -18,6 +18,7 @@ module.exports = {
     'no-param-reassign': 0, // leyfa reassign á parameter
     'prefer-destructuring': 0, // leyfa að hafa t.d. array[0][1]
     'import/no-cycle': 0, // leyfa dependency cycle
+    'import/named': 0,
     quotes: ['error', 'single'],
     'no-console': [
       'warn',
