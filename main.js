@@ -75,7 +75,6 @@ export async function taskSelect(taskType, findIn){
         }
     }
 
-
     
     showTasks(taskArr);
 }
